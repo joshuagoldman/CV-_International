@@ -252,3 +252,37 @@ C:\Users\jogo\Documents\CV_Mira\CV_International\obj\Debug\CV_International.exe.
 C:\Users\jogo\Documents\CV_Mira\CV_International\obj\Debug\CV_International.fsproj.CopyComplete
 C:\Users\jogo\Documents\CV_Mira\CV_International\obj\Debug\CV_International.exe
 C:\Users\jogo\Documents\CV_Mira\CV_International\obj\Debug\CV_International.pdb
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\bin\Debug\CV_International.XML
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\obj\Debug\CV_International.exe
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\obj\Debug\CV_International.pdb
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\obj\Debug\CV_International.fsprojAssemblyReference.cache
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\obj\Debug\CV_International.exe.config
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\obj\Debug\CV_International.fsproj.CopyComplete
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\htmlExample.txt
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\CV_International.exe.config
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\CV_International.exe
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\CV_International.pdb
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\CV_International.XML
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\Fable.Core.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\FSharp.Core.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\Newtonsoft.Json.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\System.ValueTuple.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\Thoth.Json.Net.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\Fable.Core.xml
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\FSharp.Core.xml
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\Newtonsoft.Json.xml
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\System.ValueTuple.xml
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\Thoth.Json.Net.xml
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\cs\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\de\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\es\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\fr\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\it\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\ja\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\ko\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\pl\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\pt-BR\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\ru\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\tr\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\zh-Hans\FSharp.Core.resources.dll
+C:\Users\Mira Goldman\Documents\CV-_International\CV_International\zh-Hant\FSharp.Core.resources.dll

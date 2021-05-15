@@ -446,11 +446,11 @@ let main_model =
 //    File.WriteAllText("htmlFSharp.fs", fSharpCode)
 
 let dir =
-   $"{Directory.GetCurrentDirectory()}\\CV_International\Resume-CV-Design-N19-master\index.html"
+   $"{Directory.GetCurrentDirectory()}\..\Resume-CV-Design-N19-master\index.html"
 
 let writeToHtml =
     
-    File.WriteAllText("C:\Users\jogo\Documents\CV_Mira\Resume-CV-Design-N19-master\index.html", (CV_Html_Template.template main_model).htmlStr)
+    File.WriteAllText(dir, (CV_Html_Template.template main_model).htmlStr)
 
 writeToHtml
 
