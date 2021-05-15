@@ -291,7 +291,7 @@ let template (main_model : CV_International.Models.Main_Model ) =
                                         prop.className "resume_profile"
                                         prop.children [
                                             Html.img [
-                                                prop.src "Photo_Joshua_1.jpg"
+                                                prop.src "Photo_Mira_1.jpg"
                                                 prop.alt "profile_pic"
                                             ]
                                         ]

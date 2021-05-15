@@ -12,18 +12,18 @@ open System.Text.RegularExpressions
 let basic_information = 
     {
         Picture_Url = ""
-        Name = "Joshua Goldman"
+        Name = "Mira Goldman"
         Email = "joshuagoldman94@gmail.com"
         Location = 
             {
-                Link_Title = "Gavle, Sweden"
-                Link = ""
+                Link_Title = "Haroe 268, Ramat Gan, Israel"
+                Link = "https://www.google.se/search?q=haroe+268+israel&source=hp&ei=DhOgYK-WC9ybjLsPmrKDgAw&iflsig=AINFCbYAAAAAYKAhHn2ANm0oA-UjZt3e_pvv1VdldF4P&oq=haroe+268+israel&gs_lcp=Cgdnd3Mtd2l6EAMyAggmOgIIADoICAAQxwEQowI6AgguOgUILhCTAjoICAAQxwEQrwE6BAgAEAo6BAguEAo6BAgAEB46CggAEMcBEK8BEBM6CAgAEBYQHhATOgUIIRCgAToECCEQFToHCCEQChCgAVDoP1iNe2CQgQFoAXAAeACAAbQBiAHIF5IBBDAuMjCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwiv1YzWqMzwAhXcDWMBHRrZAMAQ4dUDCAc&uact=5#"
             }
-        Telephone_Number = "+972559388237"
+        Telephone_Number = "+972523589560"
         Address =
             {
-                Link_Title = "Tallgatan 11, Brynäs, Sweden"
-                Link = "https://www.google.com/maps?q=tallgatan+11+bryn%C3%A4s&rlz=1C1GCEU_enSE820SE820&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj68oWunJnsAhVqmYsKHcpACcsQ_AUoAXoECAwQAw"
+                Link_Title = "Haroe 268, Ramat Gan, Israel"
+                Link = "https://www.google.se/search?q=haroe+268+israel&source=hp&ei=DhOgYK-WC9ybjLsPmrKDgAw&iflsig=AINFCbYAAAAAYKAhHn2ANm0oA-UjZt3e_pvv1VdldF4P&oq=haroe+268+israel&gs_lcp=Cgdnd3Mtd2l6EAMyAggmOgIIADoICAAQxwEQowI6AgguOgUILhCTAjoICAAQxwEQrwE6BAgAEAo6BAguEAo6BAgAEB46CggAEMcBEK8BEBM6CAgAEBYQHhATOgUIIRCgAToECCEQFToHCCEQChCgAVDoP1iNe2CQgQFoAXAAeACAAbQBiAHIF5IBBDAuMjCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwiv1YzWqMzwAhXcDWMBHRrZAMAQ4dUDCAc&uact=5#"
             }
         ID = 
             {
@@ -55,12 +55,12 @@ type Work_Period = {
 let job_title_1 = "Material Planner"
 let company_name_1 =
     {
-        Link_Title = "Bosch Rexroth AB Mellansel"
+        Link_Title = "Social Work Department, Malmö, Sweden"
         Link = "https://www.bosch.se/en/our-company/bosch-in-sweden/mellansel"
     }
 let period_1 = {
-    Start_Date = "Jun"
-    End_Date = "Aug 2017" |> No_Ongoing
+    Start_Date = "Mar 2019"
+    End_Date = "Okt 2020" |> No_Ongoing
 }
 let Location_1 =
     {
@@ -445,9 +445,12 @@ let main_model =
 //
 //    File.WriteAllText("htmlFSharp.fs", fSharpCode)
 
+let dir =
+   $"{Directory.GetCurrentDirectory()}\\CV_International\Resume-CV-Design-N19-master\index.html"
+
 let writeToHtml =
     
-    File.WriteAllText("C:\Users\jogo\Documents\CV_International\Resume-CV-Design-N19-master\index.html", (CV_Html_Template.template main_model).htmlStr)
+    File.WriteAllText("C:\Users\jogo\Documents\CV_Mira\Resume-CV-Design-N19-master\index.html", (CV_Html_Template.template main_model).htmlStr)
 
 writeToHtml
 
