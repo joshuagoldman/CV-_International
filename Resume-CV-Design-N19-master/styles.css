@@ -34,7 +34,7 @@ body {
 }
 
 .resume .resume_left {
-  width: 300px;
+  width: 280px;
   background: #f30c0c;
 }
 
@@ -84,20 +84,22 @@ body {
   margin-bottom: 0;
 }
 
+.resume .resume_left ul li .emailicon,
 .resume .resume_left ul li .icon {
-  width: 35px;
-  height: 35px;
-  background: #fff;
-  color: #000000;
-  border-radius: 50%;
-  margin-right: 15px;
-  font-size: 16px;
-  position: relative;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    color: #000000;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 16px;
+    position: relative;
 }
 
 .resume .resume_left ul li .data a {
   color: #f3f3f3;
-  font-size: 15;
+  font-size: 15px;
+  inline-size: 80px;
 }
 
 .resume .resume_left ul li .data a:hover {
@@ -107,6 +109,7 @@ body {
 }
 
 .resume .icon i,
+.resume .emailicon i,
 .resume .resume_right .resume_strengths ul li i {
   position: absolute;
   top: 50%;
@@ -115,8 +118,9 @@ body {
 }
 
 .resume .resume_left ul li .data {
-  color: #f7f7f7;
-  width: 70%;
+    color: #f7f7f7;
+    width: 60%;
+    overflow-wrap: break-word;
 }
 
 .resume .resume_left .resume_skills ul li {
@@ -209,7 +213,7 @@ body {
   top: 14px;
   left: -21px;
   width: 2px;
-  height: 168px;
+  height: 127px;
   background: #f30c0c;
 }
 

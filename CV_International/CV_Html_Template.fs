@@ -78,7 +78,7 @@ let basic_info_html_template model =
                     prop.className "bold"
                 ]
                 Html.p [
-                    prop.text "Test System Developer"
+                    prop.text "Receptionist"
                     prop.className "regular"
                 ]
             ]
@@ -120,7 +120,7 @@ let basic_info_html_template model =
                 Html.li [
                     prop.children [
                         Html.div [
-                            prop.className "icon"
+                            prop.className "emailicon"
                             prop.children [
                                 Html.i [
                                     prop.className "fas fa-envelope-open"
@@ -304,30 +304,6 @@ let template (main_model : CV_International.Models.Main_Model ) =
                                                 main_model
                                                 |> basic_info_html_template
                                                 |> prop.children
-                                            ]
-                                            Html.div [
-                                                prop.className "resume_item resume_skills"
-                                                prop.children [
-                                                    Html.div [
-                                                        prop.className "title"
-                                                        prop.children [
-                                                            Html.p [
-                                                                prop.text "Programming"
-                                                                prop.className "bold"
-                                                            ]
-                                                        ]
-                                                    ]
-                                                    Html.ul [
-                                                        match main_model.Extra_Info with
-                                                        | Binary_Choice.Yes_Choice extras ->
-                                                            extras.Programming_Languages
-                                                            |> skills_html_template
-                                                            |> prop.children
-                                                        | Binary_Choice.No_Choice ->
-                                                            seq[(Html.none)]
-                                                            |> prop.children
-                                                    ]
-                                                ]
                                             ]
                                             Html.div [
                                                 prop.className "resume_item resume_skills"

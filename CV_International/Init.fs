@@ -13,7 +13,7 @@ let basic_information =
     {
         Picture_Url = ""
         Name = "Mira Goldman"
-        Email = "joshuagoldman94@gmail.com"
+        Email = "Estermiragoldman@hotmail.com"
         Location = 
             {
                 Link_Title = "Haroe 268, Ramat Gan, Israel"
@@ -52,11 +52,31 @@ type Work_Period = {
 }
 *)
 
-let job_title_1 = "Material Planner"
+let job_title_0 = "Manager"
+let company_name_0 =
+    {
+        Link_Title = "DV Hemtjänst i Umeå AB"
+        Link = "https://www.dammvippanumea.se/"
+    }
+let period_0 = {
+    Start_Date = "Oct 2018"
+    End_Date = "Mar 2019" |> No_Ongoing
+}
+let Location_0 =
+    {
+        Link_Title = "Umeå, Sverige"
+        Link = "https://www.google.se/maps/place/Ume%C3%A5,+Sverige/@63.8268562,20.1018798,11z/data=!3m1!4b1!4m5!3m4!1s0x467c4e1b68add7f9:0x4034506de8c8560!8m2!3d63.8258471!4d20.2630354"
+    }
+let Description_0 =
+    seq[
+        "DV Hemtjänst i Umeå AB (DammVippan Home Services in Umeå Ltd) is a company that is specialized in nursing, private home service, and home care."
+    ]
+
+let job_title_1 = "Social Worker in the Financial Assistance Department"
 let company_name_1 =
     {
-        Link_Title = "Social Work Department, Malmö, Sweden"
-        Link = "https://www.bosch.se/en/our-company/bosch-in-sweden/mellansel"
+        Link_Title = "Malmö stad"
+        Link = "https://malmo.se/"
     }
 let period_1 = {
     Start_Date = "Mar 2019"
@@ -64,37 +84,33 @@ let period_1 = {
 }
 let Location_1 =
     {
-        Link_Title = "Mellansel, Västernorrlands Län, Sweden"
-        Link = "https://www.bosch.se/en/our-company/bosch-in-sweden/mellansel"
+        Link_Title = "Malmö, Sverige"
+        Link = "https://www.google.se/maps?q=malm%C3%B6&sxsrf=ALeKk036NWQervj-8j3bS_T9_aU3ReuRlw:1621120357769&iflsig=AINFCbYAAAAAYKBjdfwKt1aMt9h4aPDb5qUkl_MXmASZ&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyBQguEMsBMggIABDHARCvATICCAAyAgguMgIILjICCAAyAggAOggIABDHARCjAjoECAAQQ1DjBFi_C2DBDWgAcAB4AIABygGIAd4GkgEFMC40LjGYAQCgAQGqAQdnd3Mtd2l6&uact=5&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjKucf558zwAhWdEWMBHdSRDlQQ_AUoAXoECAEQAw"
     }
 let Description_1 =
     seq[
-        "Bosch Rexroth is a leading supplier of large hydraulic drive solutions."
-        "My work assignments included monitoring and analyzing the material supply need in order to ensure the company's stock balance." 
+        "Administrating state financed economical support."
         //" of the company concerning materials from external suppliers "
     ]
 
-let job_title_2 = "Test System Developer"
+let job_title_2 = "Receptionist"
 let company_name_2 =
     {
-        Link_Title = "Syntronic AB"
-        Link = "https://www.syntronic.com/"
+        Link_Title = "The Norman Tel Aviv"
+        Link = "https://www.thenorman.com/"
     }
 let period_2 = {
-    Start_Date = "Okt 2018"
+    Start_Date = "Jan 2021"
     End_Date = With_Ongoing
 }
 let Location_2 =
     {
-        Link_Title = "Utmarksvägen 33C, Gävle"
-        Link = "https://www.google.se/maps?q=Utmarksv%C3%A4gen+33C,+G%C3%A4vle&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiM1NX8k5nsAhVOpYsKHYohDC0Q_AUoAXoECAQQAw"
+        Link_Title = "Nachmani St 23-25, Tel Aviv-Yafo, 6579441"
+        Link = "https://www.google.se/maps/place/The+Norman+Tel+Aviv/@32.0659877,34.7732923,17z/data=!3m1!4b1!4m8!3m7!1s0x151d4b7da2069071:0xe7b54e3473541390!5m2!4m1!1i2!8m2!3d32.0659877!4d34.775481"
     }
 let Description_2 =
     seq[
-        "Syntronic AB, founded in 1983, develop technical solutions in areas such as telecom, defence, industry, medtech and automotive."
-        " The company operates in 8 different countries with 1276 employees." 
-        " Here, I am currently working towards one of the world's leading telecom companies, developing test system software/hardware for their aftermarket services."
-        "This implies maintenance as well as development of test system software/hardware for both older and newer (5G) telecom products."
+        "Nestled on a picturesque city square, The Norman, the only luxury boutique hotel in Tel Aviv, lies in the heart of the White City; Tel Aviv’s world-famous UNESCO heritage site of historic Bauhaus architecture buildings"
     ]
 
 (*
@@ -109,6 +125,13 @@ let Description_2 =
 
 let experiences = 
     seq[
+        {
+            Job_Title = job_title_0
+            Company_Name = company_name_0
+            Period = period_0
+            Location = Location_0
+            Description = Description_0
+        }
         {
             Job_Title = job_title_1
             Company_Name = company_name_1
@@ -236,11 +259,7 @@ let languages =
         }
         {
             Language_name = "Hebrew"
-            Rating = 50.0
-        }
-        {
-            Language_name = "German"
-            Rating = 30.0
+            Rating = 75.0
         }
     ]
 
@@ -359,7 +378,7 @@ let extras =
 let educations = 
     seq[
         {
-            Education_TItle = "Master of Science in Energy Technology."
+            Education_TItle = "Bachelor of Science in Social Work"
             University = 
                 {
                     Link = "https://www.umu.se/en/"
@@ -368,7 +387,7 @@ let educations =
             Education_Period = 
                 {
                     End_Date = "Aug 2018" |> No_Ongoing
-                    Start_Date = "Aug 2013"
+                    Start_Date = "Aug 2014"
                 }
         }
     ]
