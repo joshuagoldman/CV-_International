@@ -28,7 +28,7 @@ let basic_information =
         ID = 
             {
                 Israeli = No_Choice
-                Swedish = "3-1924217-8"
+                Swedish = "3-19242186"
             }
     }
 
@@ -69,7 +69,7 @@ let Location_0 =
     }
 let Description_0 =
     seq[
-        "DV Hemtjänst i Umeå AB (DammVippan Home Services in Umeå Ltd) is a company that is specialized in nursing, private home service, and home care."
+        "DV Hemtjänst i Umeå AB (DammVippan Home Services in Umeå Ltd) is a company that is specialized in nursing, private home service, and home care. Tasks as a manager was including managing staff, schedules and recruiting. A lot of internal and external communication (social media, PR, sales etc.)"
     ]
 
 let job_title_1 = "Social Worker in the Financial Assistance Department"
@@ -89,7 +89,7 @@ let Location_1 =
     }
 let Description_1 =
     seq[
-        "Administrating state financed economical support."
+        "Administrating state financed economical support. Writing reports and investigating weather the client has the right to get fanancial support. Clients with current illegal status to stay within Sweden."
         //" of the company concerning materials from external suppliers "
     ]
 
@@ -100,7 +100,7 @@ let company_name_2 =
         Link = "https://www.thenorman.com/"
     }
 let period_2 = {
-    Start_Date = "Jan 2021"
+    Start_Date = "Mars 2021"
     End_Date = With_Ongoing
 }
 let Location_2 =
@@ -110,7 +110,7 @@ let Location_2 =
     }
 let Description_2 =
     seq[
-        "Nestled on a picturesque city square, The Norman, the only luxury boutique hotel in Tel Aviv, lies in the heart of the White City; Tel Aviv’s world-famous UNESCO heritage site of historic Bauhaus architecture buildings"
+        "The Norman, the only luxury boutique hotel in Tel Aviv, lies in the heart of the White City; Tel Aviv’s world-famous UNESCO heritage site of historic Bauhaus architecture buildings. Tasks as a receptionist including hospitality, check ins, check outs, taking charge for rooms and extras (large amounts), email and phone communicaton. The answer should always be yes!"
     ]
 
 (*
@@ -228,16 +228,23 @@ let projects =
 let proud_of = 
     [
         {
-            Proudness_Url = "fas fa-music"
-            Proudness_Title = "Musical"
-            Proudness_Description = "A very good piano player"
+            Proudness_Url = "far fa-comments"
+            Proudness_Description = "Communication"
+            
         }
-
         {
-            Proudness_Url = "fas fa-square-root-alt"
-            Proudness_Title = "Mathematical"
-            Proudness_Description = "Highest grade in Multivariable Calculus"
-        }
+            Proudness_Url = "far fa-handshake"
+            Proudness_Description = "Collabration"
+            
+        }   
+        {
+            Proudness_Url = "fas fa-dumbbell"
+            Proudness_Description = "Hard working"
+
+
+        }   
+
+   
     ]
 
 (*
@@ -332,27 +339,11 @@ let daily_activities =
     }
 *)
 
-let strengths =
-    seq[
-        {
-            Strength_Icon = "fas fa-brain"
-            Strength_Descr = "Can easily focus"
-        }
-        {
-            Strength_Icon = "far fa-handshake"
-            Strength_Descr = "Collaborative"
-        }
-        {
-            Strength_Icon = "fas fa-dumbbell"
-            Strength_Descr = "Hard working"
-        }
-    ]
 
 let extras =
     {
         Philosofy = "Something" |> Yes_Choice
         Proud_Of = proud_of
-        Strengths = strengths 
         Languages = languages
         Programming_Languages = programming_languages
     }
@@ -465,7 +456,7 @@ let main_model =
 //    File.WriteAllText("htmlFSharp.fs", fSharpCode)
 
 let dir =
-   $"{Directory.GetCurrentDirectory()}\..\Resume-CV-Design-N19-master\index.html"
+   $"{Directory.GetCurrentDirectory()}\..\..\..\Resume-CV-Design-N19-master\index.html"
 
 let writeToHtml =
     

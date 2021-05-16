@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #585c68;
+  background: black;
   font-size: 14px;
   line-height: 22px;
   color: #555555;
@@ -35,7 +35,7 @@ body {
 
 .resume .resume_left {
   width: 280px;
-  background: #f30c0c;
+  background: #43c2c1;
 }
 
 .resume .resume_left .resume_profile {
@@ -61,7 +61,7 @@ body {
 }
 
 .resume .resume_left .regular {
-  color: #b1eaff;
+  color: black;
 }
 
 .resume .resume_item {
@@ -89,7 +89,7 @@ body {
     width: 35px;
     height: 35px;
     background: #fff;
-    color: #000000;
+    color: black;
     border-radius: 50%;
     margin-right: 15px;
     font-size: 16px;
@@ -97,13 +97,13 @@ body {
 }
 
 .resume .resume_left ul li .data a {
-  color: #f3f3f3;
+  color: black;
   font-size: 15px;
   inline-size: 80px;
 }
 
 .resume .resume_left ul li .data a:hover {
-  color: rgb(8, 8, 8);
+  color: white;
   background-color: transparent;
   text-decoration: underline;
 }
@@ -118,7 +118,7 @@ body {
 }
 
 .resume .resume_left ul li .data {
-    color: #f7f7f7;
+    color: black;
     width: 60%;
     overflow-wrap: break-word;
 }
@@ -167,7 +167,7 @@ body {
 }
 
 .resume .resume_right .bold {
-  color: #f30c0c;
+  color: black;
 }
 
 .resume .resume_right .resume_work ul,
@@ -203,7 +203,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  border: 2px solid #f30c0c;
+  border: 2px solid black;
 }
 
 .resume .resume_right .resume_work ul li:after,
@@ -214,7 +214,7 @@ body {
   left: -21px;
   width: 2px;
   height: 127px;
-  background: #f30c0c;
+  background: black;
 }
 
 .resume .resume_right .resume_strengths ul li {
@@ -228,7 +228,7 @@ body {
 .resume .resume_right .resume_strengths ul li .icon {
   width: 60px;
   height: 60px;
-  background: #f30c0c;
+  background: #43c2c1;
   color: #000000;
   border-radius: 50%;
   margin-right: 15px;
@@ -242,23 +242,23 @@ body {
 }
 
 .resume .resume_right .resume_work ul li .info p a {
-  color: #0476d4;
+  color: black;
   font-size: 15;
 }
 
 .resume .resume_right .resume_work ul li .info p a:hover {
-  color: red;
+  color: #0476d4;
   background-color: transparent;
   text-decoration: underline;
 }
 
 .resume .resume_right .resume_education ul li .info p a {
-  color: #0476d4;
+  color: black;
   font-size: 15;
 }
 
 .resume .resume_right .resume_education ul li .info p a:hover {
-  color: red;
+  color: #0476d4;
   background-color: transparent;
   text-decoration: underline;
 }

@@ -70,7 +70,6 @@ module Models =
 
     type Proudness = {
         Proudness_Url : string
-        Proudness_Title : string
         Proudness_Description : string
     }
 
@@ -82,7 +81,6 @@ module Models =
     type Extras = {
         Philosofy : Binary_Choice<string>
         Proud_Of : seq<Proudness>
-        Strengths : seq<Strength>
         Languages : seq<Language>
         Programming_Languages : seq<Language>
     }

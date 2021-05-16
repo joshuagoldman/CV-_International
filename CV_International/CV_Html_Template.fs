@@ -6,25 +6,7 @@ open CV_International.Models
 let strengths model =
     match model.Extra_Info with
     | Binary_Choice.Yes_Choice extras ->
-        extras.Strengths
-        |> Seq.map (fun strength ->
-                Html.li [
-                    prop.children [
-                        Html.div [
-                            prop.className "icon"
-                            prop.children [
-                                Html.i [
-                                    prop.className strength.Strength_Icon
-                                ]
-                            ]
-                        ]
-                        Html.div [
-                            prop.className "data"
-                            prop.text strength.Strength_Descr
-                        ]
-                    ]
-                ]  
-            )
+        seq[Html.none]
     | _ ->
         seq[Html.none]
 
@@ -245,11 +227,8 @@ let produOf model =
                             prop.className "data"
                             prop.children [
                                 Html.p [
-                                    prop.text proudness.Proudness_Title
-                                    prop.className "semi-bold"
-                                ]
-                                Html.p [
                                     prop.text proudness.Proudness_Description
+                                    prop.className "semi-bold"
                                 ]
                             ]
                         ]
@@ -336,7 +315,7 @@ let template (main_model : CV_International.Models.Main_Model ) =
                                                         prop.className "title"
                                                         prop.children [
                                                             Html.p [
-                                                                prop.text "Proud of"
+                                                                prop.text "Strengths"
                                                                 prop.className "bold"
                                                             ]
                                                         ]
@@ -391,25 +370,6 @@ let template (main_model : CV_International.Models.Main_Model ) =
                                             Html.ul [
                                                 main_model.Educations
                                                 |> educations
-                                                |> prop.children
-                                            ]
-                                        ]
-                                    ]
-                                    Html.div [
-                                        prop.className "resume_item resume_strengths"
-                                        prop.children [
-                                            Html.div [
-                                                prop.className "title"
-                                                prop.children [
-                                                    Html.p [
-                                                        prop.text "Strengths"
-                                                        prop.className "bold"
-                                                    ]
-                                                ]
-                                            ]
-                                            Html.ul [
-                                                main_model
-                                                |> strengths
                                                 |> prop.children
                                             ]
                                         ]
