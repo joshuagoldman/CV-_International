@@ -50,34 +50,34 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Html.fs" />
     <None Include="App.config" />
-    <Content Include="packages.config" />
     <Content Include="htmlExample.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="CV_Html_Template.fs" />
     <Compile Include="GenerateHtmlFunctions.fs" />
     <Compile Include="Init.fs" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Fable.Core">
-      <HintPath>packages\Fable.Core.3.1.4\lib\netstandard2.0\Fable.Core.dll</HintPath>
+      <HintPath>packages\Fable.Core.3.2.7\lib\netstandard2.0\Fable.Core.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Core">
-      <HintPath>packages\FSharp.Core.4.7.1\lib\net45\FSharp.Core.dll</HintPath>
+      <HintPath>packages\FSharp.Core.5.0.1\lib\netstandard2.0\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.ValueTuple">
-      <HintPath>packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Thoth.Json.Net">
-      <HintPath>packages\Thoth.Json.Net.4.1.0\lib\net46\Thoth.Json.Net.dll</HintPath>
+      <HintPath>packages\Thoth.Json.Net.5.0.0\lib\net46\Thoth.Json.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
