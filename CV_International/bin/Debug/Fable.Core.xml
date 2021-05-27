@@ -55,12 +55,7 @@
  to automatically pass generic information without inlining the method
 </summary>
 </member>
-<member name="T:Fable.Core.OverloadSuffixAttribute">
-<summary>
- Intended for replacement types in Fable.Library
-</summary>
-</member>
-<member name="T:Fable.Core.ReplacesAttribute">
+<member name="T:Fable.Core.NoOverloadSuffixAttribute">
 <summary>
  Intended for replacement types in Fable.Library
 </summary>
@@ -73,7 +68,6 @@
 <member name="T:Fable.Core.ParamListAttribute">
 <summary>
  Used to spread the last argument. Mainly intended for `React.createElement` binding, not for general use.
- Fable 1 only accepted lists, but Fable 2 accepts seq as well.
 </summary>
 </member>
 <member name="T:Fable.Core.StringEnumAttribute">
@@ -100,11 +94,6 @@
 <member name="T:Fable.Core.EmitMethodAttribute">
 <summary>
  Same as `Emit(&quot;$0.methodName($1...)&quot;)`
-</summary>
-</member>
-<member name="T:Fable.Core.EmitDeclarationAttribute">
-<summary>
- The declaration value will be replaced with the JS code.
 </summary>
 </member>
 <member name="T:Fable.Core.EmitAttribute">
@@ -148,6 +137,17 @@
  More info: http://fable.io/docs/interacting.html#Erase-attribute
 </summary>
 </member>
+<member name="T:Fable.Core.AttachMembersAttribute">
+<summary>
+ Used on a class to attach all members, useful when you want to use the class from JS.
+</summary>
+</member>
+<member name="T:Fable.Core.MangleAttribute">
+<summary>
+ Used on interfaces to mangle member names. This allows overloading and
+ prevents conflicts with other interfaces, but cannot be used to interact with JS.
+</summary>
+</member>
 <member name="F:Fable.Core.CaseRules.KebabCase">
 <summary>
  FooBar -&gt; foo-bar
@@ -166,6 +166,16 @@
 <member name="F:Fable.Core.CaseRules.LowerFirst">
 <summary>
  FooBar -&gt; fooBar
+</summary>
+</member>
+<member name="M:Fable.Core.Experimental.casenameWithFieldIndex``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1})">
+<summary>
+ Reads the case name and field index of a simple match: `casenameWithFieldIndex(function Bar(_,i) -&gt; i | _ -&gt; failwith &quot;&quot;)`
+</summary>
+</member>
+<member name="M:Fable.Core.Experimental.casenameWithFieldCount``1(Microsoft.FSharp.Core.FSharpFunc{``0,System.Boolean})">
+<summary>
+ Reads the case name and field count of a simple match: `casenameWithFieldCount(function Foo _ -&gt; true | _ -&gt; false)`
 </summary>
 </member>
 <member name="M:Fable.Core.Experimental.nameofLambda``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1})">
@@ -202,33 +212,10 @@
  Use it when importing a constructor from a JS library.
 </summary>
 </member>
-<member name="M:Fable.Core.JsInterop.isNullOrUndefined(System.Object)">
-<summary>
- JS non-strict null checking
-</summary>
-</member>
-<member name="M:Fable.Core.JsInterop.isIn(System.String,System.Object)">
-<summary>
- JS `in` operator
-</summary>
-</member>
-<member name="M:Fable.Core.JsInterop.jsThis``1">
-<summary>
- Compiles to JS `this` keyword.
-
- ## Sample
-     jqueryMethod(fun x y -&gt; jsThis?add(x, y))
-</summary>
-</member>
-<member name="M:Fable.Core.JsInterop.toPlainJsObj``1(``0)">
-<summary>
- Used when you need to send an F# record to a JS library accepting only plain JS objects (POJOs)
-</summary>
-</member>
 <member name="M:Fable.Core.JsInterop.importValueDynamic``1(``0)">
 <summary>
  Imports a reference from an external file dynamically at runtime
- ATENTION: Needs fable-compiler 2.3, pass the reference directly in argument position (avoid pipes)
+ ATTENTION: Pass the reference directly in argument position (avoid pipes)
 </summary>
 </member>
 <member name="M:Fable.Core.JsInterop.importDynamic``1(System.String)">
@@ -273,9 +260,24 @@
  ATTENTION: This statement must appear on the root level of the file module.
 </summary>
 </member>
+<member name="M:Fable.Core.JsInterop.isNullOrUndefined(System.Object)">
+<summary>
+ JS non-strict null checking
+</summary>
+</member>
+<member name="M:Fable.Core.JsInterop.isIn(System.String,System.Object)">
+<summary>
+ Alias of `jsIn`
+</summary>
+</member>
 <member name="M:Fable.Core.JsInterop.jsConstructor``1">
 <summary>
  Get the JS function constructor for class types
+</summary>
+</member>
+<member name="M:Fable.Core.JsInterop.toPlainJsObj``1(``0)">
+<summary>
+ Used when you need to send an F# record to a JS library accepting only plain JS objects (POJOs)
 </summary>
 </member>
 <member name="M:Fable.Core.JsInterop.createEmpty``1">
@@ -300,6 +302,19 @@
 <summary>
  Create a literal JS object from a collection of key-value tuples.
  E.g. `createObj [ &quot;a&quot; ==&gt; 5 ]` in JS becomes `{ a: 5 }`
+</summary>
+</member>
+<member name="M:Fable.Core.JsInterop.emitJsStatement``1(System.Object,System.String)">
+<summary>
+ Same as emitJsExpr but intended for JS code that must appear in a statement position
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements
+ E.g. `emitJsExpr aValue &quot;while($0 &lt; 5) doSomething()&quot;`
+</summary>
+</member>
+<member name="M:Fable.Core.JsInterop.emitJsExpr``1(System.Object,System.String)">
+<summary>
+ Destructure a tuple of arguments and applies to literal JS code as with EmitAttribute.
+ E.g. `emitJsExpr (arg1, arg2) &quot;$0 + $1&quot;` in JS becomes `arg1 + arg2`
 </summary>
 </member>
 <member name="M:Fable.Core.JsInterop.createNew(System.Object,System.Object)">
