@@ -41,6 +41,11 @@ module Models =
         Strength_Descr : string
     }
 
+    type ExperienceWith = {
+        Strength_Icon : string
+        Strength_Descr : string
+    }
+
     type Paragraph_Line = {
         Line : string
     }
@@ -83,6 +88,7 @@ module Models =
         Philosofy : Binary_Choice<string>
         Proud_Of : seq<Proudness>
         Strengths : seq<Strength>
+        ExperienceWith : seq<string>
         Languages : seq<Language>
         Programming_Languages : seq<Language>
     }

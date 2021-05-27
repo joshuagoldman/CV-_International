@@ -22,7 +22,7 @@ let basic_information =
         Telephone_Number = "+972559388237"
         Address =
             {
-                Link_Title = "Tallgatan 11, Brynäs, Sweden"
+                Link_Title = "s"
                 Link = "https://www.google.com/maps?q=tallgatan+11+bryn%C3%A4s&rlz=1C1GCEU_enSE820SE820&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj68oWunJnsAhVqmYsKHcpACcsQ_AUoAXoECAwQAw"
             }
         ID = 
@@ -236,7 +236,7 @@ let languages =
         }
         {
             Language_name = "Hebrew"
-            Rating = 50.0
+            Rating = 60.0
         }
         {
             Language_name = "German"
@@ -316,8 +316,8 @@ let daily_activities =
 let strengths =
     seq[
         {
-            Strength_Icon = "fas fa-brain"
-            Strength_Descr = "Can easily focus"
+            Strength.Strength_Icon = "fas fa-brain"
+            Strength.Strength_Descr = "Can easily focus"
         }
         {
             Strength_Icon = "far fa-handshake"
@@ -329,11 +329,19 @@ let strengths =
         }
     ]
 
+let experienceWith =
+    seq[
+        "Git"
+        "Unit Testing"
+        "Jenkins"
+    ]
+
 let extras =
     {
         Philosofy = "Something" |> Yes_Choice
         Proud_Of = proud_of
         Strengths = strengths 
+        ExperienceWith = experienceWith
         Languages = languages
         Programming_Languages = programming_languages
     }

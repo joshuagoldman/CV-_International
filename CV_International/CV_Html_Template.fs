@@ -28,6 +28,18 @@ let strengths model =
     | _ ->
         seq[Html.none]
 
+let experienceWith model =
+    match model.Extra_Info with
+    | Binary_Choice.Yes_Choice extras ->
+        extras.ExperienceWith
+        |> Seq.map (fun experienceWith ->
+                Html.li [
+                    prop.text experienceWith
+                ]  
+            )
+    | _ ->
+        seq[Html.none]
+
 let educations educations =
     let dateStr education = 
         let endDate = 
@@ -129,7 +141,7 @@ let basic_info_html_template model =
                         ]
                         Html.div [
                             prop.text model.Basic.Email
-                            prop.className "data"
+                            prop.className "data email"
                         ]
                     ]
                 ]
@@ -416,6 +428,31 @@ let template (main_model : CV_International.Models.Main_Model ) =
                                                 main_model.Educations
                                                 |> educations
                                                 |> prop.children
+                                            ]
+                                        ]
+                                    ]
+                                    Html.div [
+                                        prop.className "resume_item resume_workingwith"
+                                        prop.children [
+                                            Html.div [
+                                                prop.className "title"
+                                                prop.children [
+                                                    Html.p [
+                                                        prop.text "Frequently Working with"
+                                                        prop.className "bold"
+                                                    ]
+                                                ]
+                                            ]
+                                            Html.ul [
+                                                prop.children[
+                                                    Html.div[
+                                                        prop.className "check-list"
+                                                        
+                                                        main_model
+                                                        |> experienceWith
+                                                        |> prop.children
+                                                    ]
+                                                ]
                                             ]
                                         ]
                                     ]
