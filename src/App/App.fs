@@ -29,11 +29,11 @@ let update (msg : Message) (model : Model) : Model =
 let styleSheet = [
     rule ".main-background" [
         Css.positionAbsolute
-        Css.backgroundImageUrl "cv_background.jpg"
+        Css.backgroundImage "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('cv_background.jpg')"
         Css.zIndex -1
         Css.backgroundSizeCover
         Css.backgroundRepeatRepeatY
-        Css.height (length.px 1300)
+        Css.height (length.px 1100)
         Css.width (length.px 1400)
     ]
     rule ".margin-standard" [
@@ -47,9 +47,8 @@ let styleSheet = [
         Css.borderRadius (Feliz.length.percent 50)
     ]
     rule ".glass" [
-        Css.boxShadow "inset 0 0 2000px rgba(255, 255, 255, 1);"
-        Css.filterBlur 10
-        Css.backgroundColor "rgba(255, 255, 255, .45);"
+        Css.boxShadow "0 0 1rem 00 rgba(109, 155, 195, 0.8)"
+        Css.backgroundColor "rgba(255, 255, 255, .55);"
         Css.margin 20
         Css.padding 30
         Css.borderRadius 10
@@ -90,15 +89,19 @@ let tsavaInfos = [
         Years = "2013-2016 "
         Content = [
             class' "content"
-            Html.h5 [
+            Html.h4 [
                 style [
                     Css.fontWeightBold
+                    Css.color color.black
                 ]
                 Html.p [
-                    text "חייל רגלים"
+                    text "חייל רגלים -"
                 ]
             ]
             Html.h6 [
+                style [
+                    Css.color color.black
+                ]
                 Html.ul [
                     Html.li [
                         text "לוחם בחטיבת כפיר, גדוד 93-חרוב , שחרור בדרגת סמל ראשון"
@@ -126,6 +129,7 @@ let educationInfos = [
             Html.h5 [
                 style [
                     Css.fontWeightBold
+                    Css.color color.black
                 ]
                 Html.p [
                     text "תואר ראשון בעיצוב תעשייתי, המכון הטכנולוגי חולון.
@@ -133,6 +137,9 @@ let educationInfos = [
                 ]
             ]
             Html.h6 [
+                style [
+                    Css.color color.black
+                ]
                 Html.ul [
                     Html.li [
                         text "מתכת, עץ, פלסטיקה וצבע."
@@ -157,6 +164,7 @@ let educationInfos = [
             Html.h6 [
                 style [
                     Css.fontWeightBold
+                    Css.color color.black
                 ]
                 text "מכינה לעיצוב, המכינה הבינתחומית לעיצוב ואדריכלות"
             ]
@@ -169,6 +177,7 @@ let educationInfos = [
            Html.h6 [
                style [
                    Css.fontWeightBold
+                   Css.color color.black
                ]
                text "קורס אנגלית, Wall street ראשון לציון"
            ]
@@ -181,6 +190,7 @@ let educationInfos = [
             Html.h6 [
                 style [
                     Css.fontWeightBold
+                    Css.color color.black
                 ]
                 text "השכלה תיכונית - בגרות מלאה, תיכון יצחק רבין מזכרת בתיה."
             ]
@@ -243,7 +253,7 @@ let strengths = [
     }
     {
         Icon = "fas fa-users-cog fa-2x"
-        Info = "יכולת ביטוי ברמה גבוהה יכולת עבודה בצוות"
+        Info = "יכולת ביטוי ברמה גבוהה ויכולת עבודה בצוות"
     }
 ]
 
@@ -270,23 +280,19 @@ let getSkillLevel ( info: SkillLevelInfo ) =
     Html.div [
         class' "columns is-centered"
         style [
-            Css.color "black"
-            Css.margin 5
+            Css.color Feliz.color.black
         ]
         Html.div [
             class' "column"
             text percentageWritten
-            style [
-                Css.marginRight 5
-            ]
         ]
         Html.div [
             class' "column is-two-thirds"
             style [
-                Css.margin 5
+                Css.color "black"
             ]
             Html.progress [
-                class' "progress is-medium is-danger"
+                class' "progress is-medium is-link"
                 Attr.value info.Percent
                 Attr.max 100.0
             ]
@@ -305,9 +311,16 @@ let getWorkInfo ( info: InfoWithYear ) =
                 text info.Years
                 style [
                     Css.fontWeightBold
+                    Css.color Feliz.color.black
                 ]
             ]
-            Html.h6 info.Title
+            Html.h6 [
+                style [
+                    Css.fontWeightBold
+                    Css.color color.black
+                ]
+                text info.Title
+            ]
         ]
     ]
 
@@ -318,6 +331,7 @@ let getEducationInfos ( info: ContentWithContent<NodeFactory> ) =
                 text info.Years
                 style [
                     Css.fontWeightBold
+                    Css.color Feliz.color.black
                 ]
             ]
         ]
@@ -327,26 +341,20 @@ let getEducationInfos ( info: ContentWithContent<NodeFactory> ) =
 
 let getBasicInfo info =
     Html.div [
-        class' "content"
-        style [
-            Css.color "black"
-        ]
+        class' "columns is-centered"
         Html.div [
-            class' "columns is-centered"
-            Html.div [
-                class' "column is-one-fifth"
-                Html.span [
-                    class' "icon"
-                    Html.i [
-                        class' info.Icon
-                    ]
+            class' "column is-one-fifth"
+            Html.span [
+                class' "icon"
+                Html.i [
+                    class' info.Icon
                 ]
             ]
-            Html.div [
-                class' "column"
-                Html.span [
-                    text info.Info
-                ]
+        ]
+        Html.div [
+            class' "column is-four-fifths"
+            Html.span [
+                text info.Info
             ]
         ]
     ]
@@ -356,6 +364,7 @@ let getStrengths info =
         class' "content"
         style [
             Css.color "black"
+            Css.fontWeightBold
         ]
         Html.div [
             class' "columns is-centered"
@@ -448,6 +457,9 @@ let view() =
         ]
         Html.div [
             class' "columns is-centered margin-standard"
+            style [
+                Css.padding 11
+            ]
             Html.div [
                 class' "column is-one-quarter"
                 Html.div [
