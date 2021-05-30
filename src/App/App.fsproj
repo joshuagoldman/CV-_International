@@ -4,6 +4,14 @@
     <UseLocalSutil>False</UseLocalSutil>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="About\types.fs" />
+    <Compile Include="About\funtions\miscellaneous.fs" />
+    <Compile Include="About\state.fs" />
+    <Compile Include="About\view.fs" />
+    <Compile Include="Main\types.fs" />
+    <Compile Include="Main\funtions\miscellaneous.fs" />
+    <Compile Include="Main\state.fs" />
+    <Compile Include="Main\view.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>
   <Choose>
