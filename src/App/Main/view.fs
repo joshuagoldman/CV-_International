@@ -6,79 +6,41 @@ open Sutil.Attr
 open Feliz
 open Feliz.Styles
 open Main.functions.miscellaneous
-
-module Bulma =
-    type Column =
-        static member column x =
-            Html.div (x @ [class' "column"])
-        static member isOneThird x =
-            Html.div (x @ [class' "column is-one-third"])
-        static member isTwoThirds x =
-            Html.div (x @ [class' "column is-two-thirds"])
-        static member isOneQuarter x =
-            Html.div (x @ [class' "column is-one-quarter"])
-        static member isTwoQuarters x = 
-            Html.div (x @ [class' "column is-two-quarters"])
-        static member isThreeQuarters x =
-            Html.div (x @ [class' "column is-three-quarters"])
-        static member isHalf x = 
-            Html.div (x @ [class' "column is-half"])
-        static member isOneFifth x = 
-            Html.div (x @ [class' "column is-one-fifth"]) 
-        static member isTwoFifths x =
-            Html.div (x @ [class' "column is-two-fifths"]) 
-        static member isThreeFifths x =
-            Html.div (x @ [class' "column is-three-fifths"])
-        static member isFourFifths x =
-            Html.div (x @ [class' "column is-four-fifths"])
-
-    type Columns =
-        static member columns x = 
-            Html.div (x @ [class' "columns"]) 
-        static member isCentered x =
-            Html.div (x @ [class' "columns is-centered"])  
+open Main.types
 
 let styleSheet = [
-    Sutil.Styling.rule "*" [
-        Css.margin 0
-        Css.padding 0
-        Css.boxSizingBorderBox
-        Css.textDecorationNone
+    Sutil.Styling.rule ".cv-img" [
+        Css.height 210
+        Css.width 215   
+        Css.borderStyleSolid
+        Css.marginLeft 5
+        Css.borderWidth 2
     ]
-    Sutil.Styling.rule ".max-width" [
-        Css.maxWidth (length.px 1300)
-        Css.padding (length.px 0,length.px 80)
-        Css.margin length.auto
+    Sutil.Styling.rule ".glass" [
+        Css.borderRadius 10
+        Css.padding 20
+        Css.margin 10
+        Css.color color.black
+        Css.fontWeightBold
+        Css.boxShadow "0 0 1rem 0 rgba(0, 0, 0, 0.4)"
+        Css.backgroundColor "rgba(220,243,255, 0.60)"
     ]
-    Sutil.Styling.rule ".navbar" [
-        Css.width (length.percent 100.0)
+    Sutil.Styling.rule ".background" [
+        Css.backgroundPosition "no-repeat center center fixed"
+        Css.height 1100
+        Css.backgroundSize "cover"
         Css.padding (length.px 15)
         Css.backgroundColor "crimson"
         Css.fontFamily "sans serif"
+        Css.zIndex -1
+        Css.backgroundImage "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(cv_background.jpg)"
 
     ]
-    Sutil.Styling.rule ".navbar .max-width" [
-        Css.justifyContentSpaceBetween
-        Css.displayFlex
-        Css.alignItemsCenter
+    Sutil.Styling.rule "a:hover" [
+        Css.color "white"
     ]
-    Sutil.Styling.rule ".menu-list a" [
-        Css.fontSize (length.px 18)
-        Css.fontWeight 500
-    ]
-    Sutil.Styling.rule ".menu-list a:link" [
-        Css.color "#fff"
-    ]
-    Sutil.Styling.rule ".menu-list a:hover" [
+    Sutil.Styling.rule "a" [
         Css.color "black"
-    ]
-    Sutil.Styling.rule ".menu-list" [
-        Css.marginTop 5
-    ]
-    Sutil.Styling.rule ".logo" [
-        Css.color "#fff"
-        Css.fontSize (length.px 35)
-        Css.fontWeight 600
     ]
 ]
 
@@ -106,24 +68,68 @@ let view() =
     // Elmish, we treat it like an IObservable<Model>
     let model, dispatch = () |> Store.makeElmish Main.state.init Main.state.update ignore
 
-    Html.nav [
+    Bulma.Columns.isCentered [
+        class' "background"
+        Bulma.Column.isOneFifth [
+            
+            basicInfos
+            |> List.map getBasicInfo
+            |> List.append [class' "glass"]
+            |> List.append initialBasicInfo
+            |> Bulma.Column.column
+        
+        ]
         Bulma.Column.column [
-            Html.div [
-                class' "columns navbar"
-                Bulma.Column.isOneFifth [
-                    Html.div [
-                        class' "logo"
-                        Attr.href "#"
-                        text "Portfo"
-                        Html.span [
-                            text "lio."
-                        ] 
-                    ]
+            Bulma.Columns.columns [
+                Bulma.Column.column [
+                    workInfos
+                    |> List.map getEducationInfos
+                    |> List.append [getSectionHeader "Work Experience"]
+                    |> List.append [class' "glass"]
+                    |> Bulma.Column.column
                 ]
-                Bulma.Column.isOneFifth [
-                    style [ Css.marginLeft (length.percent 56.0)]
-                    (menuLinks |> List.map getMenuLinks)
-                    |> Bulma.Columns.isCentered
+            ]
+
+            Bulma.Columns.columns [
+                Bulma.Column.column [
+                    otherSkills
+                    |> List.map getSkillLevel
+                    |> List.append [getSectionHeader "Skills"]
+                    |> List.append [class' "glass"]
+                    |> List.append [style [ Css.padding 40]]
+                    |> Bulma.Column.column
+                ]
+            ]
+        
+        ]
+        Bulma.Column.isOneThird [
+            Bulma.Columns.columns [
+                Bulma.Column.column [
+                    educationInfos
+                    |> List.map getEducationInfos
+                    |> List.append [getSectionHeader "Education"]
+                    |> List.append [class' "glass"]
+                    |> Bulma.Column.column
+                ]
+            ]
+            Bulma.Columns.columns [
+                Bulma.Column.column [
+                    languageSkilllevells
+                    |> List.map getSkillLevel
+                    |> List.append [getSectionHeader "Languages"]
+                    |> List.append [class' "glass"]
+                    |> List.append [style [ Css.padding 40]]
+                    |> Bulma.Column.column
+                ]
+            ]
+
+            Bulma.Columns.columns [
+                Bulma.Column.column [
+                    strengths
+                    |> List.map getStrengths
+                    |> List.append [getSectionHeader "Strengths"]
+                    |> List.append [class' "glass"]
+                    |> Bulma.Column.column
                 ]
             ]
         ]

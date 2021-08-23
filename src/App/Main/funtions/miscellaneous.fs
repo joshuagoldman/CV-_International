@@ -4,67 +4,70 @@ open Sutil
 open Sutil.DOM
 open Sutil.Attr
 open Feliz
+open Main.types
 
 type InfoWithYear = {
     Years: string
     Title: string
 }
 
-let workInfos = [
-    {
-        Years = "2021-"
-        Title = "מאבטח במשרד ראש הממשלה"
-    }
-    {
-        Years = "2020-2021"
-        Title = "מאבטח ברשות המיסים- מתקדם ב"
-    }
-    {
-        Years = "2019-2020 "
-        Title = "מאבטח בקריית הממשלה ת\"א-מתקדם ב\'"
-    }
-    {
-        Years = "2017-2018 "
-        Title = "2018 מאבטח בחברת applied materials"
-    }
-]
-
 type ContentWithContent<'Node> = {
     Years: string
     Content: seq<'Node>
 }
 
-let tsavaInfos = [
+let workInfos = [
     {
-        Years = "2013-2016 "
+        Years = "Jun - Aug 2017"
         Content = [
             class' "content"
             Html.h4 [
                 style [
                     Css.fontWeightBold
                     Css.color color.black
+                    Css.textDecorationUnderline
                 ]
-                Html.p [
-                    text "חייל רגלים -"
+                Html.a [
+                    Attr.href "https://www.bosch.se/en/our-company/bosch-in-sweden/mellansel/"
+                    text "Material Planner, Bosch Rexroth AB Mellansel"
                 ]
             ]
             Html.h6 [
                 style [
                     Css.color color.black
+                    Css.fontSize 14
+                    Css.fontStyleItalic
                 ]
-                Html.ul [
-                    Html.li [
-                        text "לוחם בחטיבת כפיר, גדוד 93-חרוב , שחרור בדרגת סמל ראשון"
+                Html.p [
+                    text "Bosch Rexroth is a leading supplier of large hydraulic drivesolutions. My work assignments included monitoring and analyzing the material supply need in order to ensure thecompany's stock balance."
+                ]
+            ]
+        ]
+    }
+    {
+        Years = "Okt 2018 -"
+        Content = [
+            class' "content"
+            Html.h4 [
+                style [
+                    Css.color color.black
+                    Css.textDecorationUnderline
+                ]
+                Html.p [
+                    Html.a [
+                        Attr.href "https://www.syntronic.com/"
+                        text "Test System Developer, Syntronic AB"
                     ]
-                    Html.li [
-                        text "לוחם בתפקיד נוסף: תופר ציוד טקטי"
-                    ]
-                    Html.li [
-                        text "ייצור, פיתוח ועיצוב ציוד לחימה"
-                    ]
-                    Html.li [
-                        text "פיקוח כולל על כל התנהלות המתפרה-  מכירות, כספים, הזמנות, מלאי ושירות."
-                    ]
+                ]
+            ]
+            Html.h6 [
+                style [
+                    Css.color color.black
+                    Css.fontSize 14
+                    Css.fontStyleItalic
+                ]
+                Html.p [
+                    text "Syntronic AB, founded in 1983, develop technical solutions in areas such as telecom, defence, industry, medtech andautomotive. The company operates in 8 different countries with 1276 employees. Here, I am currently working toward some of the world's leading telecom companies, developing test system software/hardware for their aftermarket services. This implies maintenance as well as development of test system software/hardware for both older and newer (5G) telecom products."
                 ]
             ]
         ]
@@ -73,79 +76,32 @@ let tsavaInfos = [
 
 let educationInfos = [
     {
-        Years = "2018-2019"
+        Years = "Aug 2013 - Aug 2018"
         Content = [
             class' "content"
-            Html.h5 [
+            Html.h4 [
                 style [
                     Css.fontWeightBold
                     Css.color color.black
+                    Css.textDecorationUnderline
+                ]
+                Html.a [
+                    Attr.href "https://www.umu.se/en/"
+                    text "Umeå University"
+                ]
+            ]
+            Html.h6 [
+                style [
+                    Css.color color.black
+                    Css.fontSize 14
+                    Css.fontStyleItalic
                 ]
                 Html.p [
-                    text "תואר ראשון בעיצוב תעשייתי, המכון הטכנולוגי חולון.
-                    הסמכה על מגוון רחב של כלי עבודה, מכונות ותוכנות במספר תחומים, כגון:"
-                ]
-            ]
-            Html.h6 [
-                style [
-                    Css.color color.black
-                ]
-                Html.ul [
-                    Html.li [
-                        text "מתכת, עץ, פלסטיקה וצבע."
-                    ]
-                    Html.li [
-                        text "בנוסף שליטה מלאה ב, Illustrator"
-                    ]
-                    Html.li [
-                        text "משתמש בכל תוכנות, Office"
-                    ]
-                    Html.li [
-                        text "(פרישה לאחר שנה א'), Photoshop"
-                    ]
+                    text "Master of Science in Energy Technology."
                 ]
             ]
         ]
-    }
-    {
-        Years = "2017"
-        Content = [
-            class' "content"
-            Html.h6 [
-                style [
-                    Css.fontWeightBold
-                    Css.color color.black
-                ]
-                text "מכינה לעיצוב, המכינה הבינתחומית לעיצוב ואדריכלות"
-            ]
-        ]
-    }
-    {
-       Years = "2017"
-       Content = [
-           class' "content"
-           Html.h6 [
-               style [
-                   Css.fontWeightBold
-                   Css.color color.black
-               ]
-               text "קורס אנגלית, Wall street ראשון לציון"
-           ]
-       ]
-    }
-    {
-        Years = "2013-2001 "
-        Content = [
-            class' "content"
-            Html.h6 [
-                style [
-                    Css.fontWeightBold
-                    Css.color color.black
-                ]
-                text "השכלה תיכונית - בגרות מלאה, תיכון יצחק רבין מזכרת בתיה."
-            ]
-        ]
-     }
+    } 
 ]
 
 type IconInfo = {
@@ -156,54 +112,47 @@ type IconInfo = {
 let basicInfos = [
     {
         Icon = "fas fa-home fa-lg"
-        Info = "מזכרת בתיה"
+        Info = "Haroe 268, Ramat Gan"
     }
     {
         Icon = "far fa-calendar-alt fa-lg"
-        Info = "29.9.95"
+        Info = "1994-12-31"
     }
     {
         Icon = "fas fa-phone fa-lg"
-        Info = "0549792527"
+        Info = "+972559388237"
     }
     {
         Icon = "fas fa-envelope-open fa-lg"
-        Info = "matand299@gmail.com"
+        Info = "joshuagoldman94
+        @hotmail.com"
     }
     {
         Icon = "fas fa-id-card-alt fa-lg"
-        Info = "מספר זהות: 206084683"
-    }
-    {
-        Icon = "fas fa-user-friends fa-lg"
-        Info = "מצב משפחתי: רווק"
+        Info = "ID:3-1924217-8"
     }
     {
         Icon = "fas fa-car fa-lg"
-        Info = "נייד עם רכב"
+        Info = "Drivers license"
     }
 ]
 
 let strengths = [
     {
-        Icon = "fas fa-people-arrows fa-2x"
-        Info = "הנני בעל יחסי אנוש מצוינים"
+        Icon = "fas fa-hands-helping fa-2x"
+        Info = "Collaborative"
     }
     {
-        Icon = "fas fa-hands-helping fa-2x"
-        Info = "שירותי"
+        Icon = "fas fa-dumbbell fa-2x"
+        Info = "Hard working"
     }
     {
         Icon = "fas fa-cogs fa-2x"
-        Info = "טכני"
+        Info = "Love for automation"
     }
     {
-        Icon = "fas fa-sort-amount-up-alt fa-2x"
-        Info = "דקדקן ופרקטי"
-    }
-    {
-        Icon = "fas fa-users-cog fa-2x"
-        Info = "יכולת ביטוי ברמה גבוהה ויכולת עבודה בצוות"
+        Icon = "fas fa-binoculars fa-2x"
+        Info = "Can easly focus"
     }
 ]
 
@@ -215,11 +164,42 @@ type SkillLevelInfo = {
 let languageSkilllevells = [
     {
         Percent = 100.0
-        SkillName = "עברית"
+        SkillName = "Swedish"
     }
     {
         Percent = 95.0
-        SkillName = "אנגלית"
+        SkillName = "English"
+    }
+    {
+        Percent = 70.0
+        SkillName = "Hebrew"
+    }
+    {
+        Percent = 30.0
+        SkillName = "German"
+    }
+]
+
+let otherSkills = [
+    {
+        Percent = 80.0
+        SkillName = "C#"
+    }
+    {
+        Percent = 85.0
+        SkillName = "F#"
+    }
+    {
+        Percent = 40.0
+        SkillName = "Javascript"
+    }
+    {
+        Percent = 55.0
+        SkillName = "MATLAB"
+    }
+    {
+        Percent = 40.0
+        SkillName = "Python"
     }
 ]
 
@@ -228,18 +208,19 @@ let getSkillLevel ( info: SkillLevelInfo ) =
         (info.Percent |> string) + "%"
 
     Html.div [
-        class' "columns is-centered"
+        class' "columns"
         style [
             Css.color Feliz.color.black
         ]
         Html.div [
             class' "column"
-            text percentageWritten
+            text info.SkillName
         ]
         Html.div [
             class' "column is-two-thirds"
             style [
                 Css.color "black"
+                Css.maxWidth 260
             ]
             Html.progress [
                 class' "progress is-medium is-link"
@@ -249,7 +230,7 @@ let getSkillLevel ( info: SkillLevelInfo ) =
         ]
         Html.div [
             class' "column"
-            text info.SkillName
+            text percentageWritten
         ]
     ]
 
@@ -257,7 +238,7 @@ let getWorkInfo ( info: InfoWithYear ) =
     Html.li [
         Html.p [
             class' "content"
-            Html.h3 [
+            Html.h4 [
                 text info.Years
                 style [
                     Css.fontWeightBold
@@ -275,19 +256,29 @@ let getWorkInfo ( info: InfoWithYear ) =
     ]
 
 let getEducationInfos ( info: ContentWithContent<NodeFactory> ) =
-    [
-        Html.p [
-            Html.h3 [
-                text info.Years
-                style [
-                    Css.fontWeightBold
-                    Css.color Feliz.color.black
+    Bulma.Columns.columns [
+        Bulma.Column.column [
+            Bulma.Columns.columns [
+                Bulma.Column.column [
+                    
+                    Html.p [
+                        Html.h3 [
+                            text info.Years
+                            style [
+                                Css.fontWeightBold
+                                Css.color Feliz.color.black
+                                Css.fontSize 23
+                            ]
+                        ]
+                    ]
                 ]
             ]
+            Bulma.Columns.isCentered [
+                Bulma.Column.isOneFifth[]
+                Bulma.Column.column (info.Content |> Seq.toList)
+            ]
         ]
-    ] 
-    |> fun x -> x @ (info.Content |> Seq.toList)
-    |> Html.li 
+    ]
 
 let getBasicInfo info =
     Html.div [
@@ -303,7 +294,7 @@ let getBasicInfo info =
         ]
         Html.div [
             class' "column is-four-fifths"
-            Html.span [
+            Html.p [
                 text info.Info
             ]
         ]
@@ -317,7 +308,20 @@ let getStrengths info =
             Css.fontWeightBold
         ]
         Html.div [
-            class' "columns is-centered"
+            class' "columns"
+            Html.div [
+                class' "column"
+                style [
+                    Css.marginTop 10
+                    Css.marginLeft 40
+                ]
+                Html.div [
+                    class' "columns"
+                    Html.span [
+                        text info.Info
+                    ]
+                ]
+            ]
             Html.div [
                 class' "column is-one-fifth"
                 Html.span [
@@ -330,18 +334,6 @@ let getStrengths info =
                     ]
                 ]
             ]
-            Html.div [
-                class' "column"
-                style [
-                    Css.marginTop 10
-                ]
-                Html.div [
-                    class' "columns is-centered"
-                    Html.span [
-                        text info.Info
-                    ]
-                ]
-            ]
         ]
     ]
    
@@ -349,7 +341,7 @@ let initialBasicInfo =
     [
         class' "content"
         style [
-            Css.padding 20
+            Css.padding 10
         ]
         Html.img[
             class' "cv-img"
@@ -357,14 +349,14 @@ let initialBasicInfo =
         ]
         Html.p [
             class' "title"
-            text "מתן דואק"
+            text "Joshua Goldman"
             style [
                 Css.color "black"
             ]
         ]
         Html.p [
             class' "subtitle"
-            text "מאבטח"
+            text "Test System Developer"
             style [
                 Css.color "black"
             ]
@@ -376,20 +368,15 @@ let basicInfo =
     |> List.map (fun info ->
             info |> getBasicInfo)
 
-let langiageSKills =
-    languageSkilllevells
-    |> List.map getSkillLevel
-    |> fun x ->
-        Html.div [
-            class' "content"
-            Html.h2 [
-                style [
-                    Css.fontWeightBold
-                    Css.color "black"
-                ]
-                text "שפות"
+let getSectionHeader name =
+    Bulma.Columns.isCentered [
+        Html.h2 [
+            style [
+                Css.fontSize 28
+                Css.fontWeightBold
+                Css.textDecorationUnderline
             ]
-
-        ] 
-        |> fun y -> y :: x
+            text name
+        ]
+    ]
 
