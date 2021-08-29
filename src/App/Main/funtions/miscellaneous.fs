@@ -67,7 +67,7 @@ let workInfos = [
                     Css.fontStyleItalic
                 ]
                 Html.p [
-                    text "Syntronic AB, founded in 1983, develop technical solutions in areas such as telecom, defence, industry, medtech andautomotive. The company operates in 8 different countries with 1276 employees. Here, I am currently working toward some of the world's leading telecom companies, developing test system software/hardware for their aftermarket services. This implies maintenance as well as development of test system software/hardware for both older and newer (5G) telecom products."
+                    text "Syntronic AB, founded in 1983, develop technical solutions in areas such as telecom, defence, industry, medtech and automotive. The company operates in 8 different countries with 1276 employees. Here, I am currently working towards the world's leading telecom company, developing test system software/hardware for their aftermarket services. This implies maintenance as well as development of test system software/hardware for both older and newer (5G) telecom products."
                 ]
             ]
         ]
@@ -125,7 +125,7 @@ let basicInfos = [
     {
         Icon = "fas fa-envelope-open fa-lg"
         Info = "joshuagoldman94
-        @hotmail.com"
+        @gmail.com"
     }
     {
         Icon = "fas fa-id-card-alt fa-lg"
@@ -134,6 +134,17 @@ let basicInfos = [
     {
         Icon = "fas fa-car fa-lg"
         Info = "Drivers license"
+    }
+]
+
+let proudOf = [
+    {
+        Icon = "fas fa-square-root-alt fa-2x"
+        Info = "Got highest grade in multivariable calculus"
+    }
+    {
+        Icon = "fas fa-music fa-2x"
+        Info = "A splended piano player"
     }
 ]
 
@@ -201,6 +212,18 @@ let otherSkills = [
         Percent = 40.0
         SkillName = "Python"
     }
+    {
+        Percent = 50.0
+        SkillName = "Jenkins"
+    }
+    {
+        Percent = 70.0
+        SkillName = "Git"
+    }
+    {
+        Percent = 50.0
+        SkillName = "Node.js"
+    }
 ]
 
 let getSkillLevel ( info: SkillLevelInfo ) =
@@ -208,12 +231,12 @@ let getSkillLevel ( info: SkillLevelInfo ) =
         (info.Percent |> string) + "%"
 
     Html.div [
-        class' "columns"
+        class' "columns is-centered"
         style [
             Css.color Feliz.color.black
         ]
         Html.div [
-            class' "column"
+            class' "column is-one-quarter"
             text info.SkillName
         ]
         Html.div [
@@ -308,7 +331,7 @@ let getStrengths info =
             Css.fontWeightBold
         ]
         Html.div [
-            class' "columns"
+            class' "columns is-centered"
             Html.div [
                 class' "column"
                 style [
@@ -323,7 +346,7 @@ let getStrengths info =
                 ]
             ]
             Html.div [
-                class' "column is-one-fifth"
+                class' "column is-one-quarter"
                 Html.span [
                     class' "icon-text"
                     Html.span [

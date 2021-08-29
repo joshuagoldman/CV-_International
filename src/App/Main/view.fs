@@ -10,8 +10,8 @@ open Main.types
 
 let styleSheet = [
     Sutil.Styling.rule ".cv-img" [
-        Css.height 210
-        Css.width 215   
+        Css.height 175
+        Css.width 250  
         Css.borderStyleSolid
         Css.marginLeft 5
         Css.borderWidth 2
@@ -19,7 +19,6 @@ let styleSheet = [
     Sutil.Styling.rule ".glass" [
         Css.borderRadius 10
         Css.padding 20
-        Css.margin 10
         Css.color color.black
         Css.fontWeightBold
         Css.boxShadow "0 0 1rem 0 rgba(0, 0, 0, 0.4)"
@@ -77,6 +76,12 @@ let view() =
             |> List.append [class' "glass"]
             |> List.append initialBasicInfo
             |> Bulma.Column.column
+
+            proudOf
+            |> List.map getStrengths
+            |> List.append [getSectionHeader "Proud of"]
+            |> List.append [class' "glass"]
+            |> Bulma.Column.column
         
         ]
         Bulma.Column.column [
@@ -93,6 +98,7 @@ let view() =
             Bulma.Columns.columns [
                 Bulma.Column.column [
                     otherSkills
+                    |> List.sortByDescending (fun itm -> itm.Percent)
                     |> List.map getSkillLevel
                     |> List.append [getSectionHeader "Skills"]
                     |> List.append [class' "glass"]
