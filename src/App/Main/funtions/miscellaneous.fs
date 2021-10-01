@@ -39,7 +39,7 @@ let workInfos = [
                     Css.fontStyleItalic
                 ]
                 Html.p [
-                    text "Bosch Rexroth is a leading supplier of large hydraulic drivesolutions. My work assignments included monitoring and analyzing the material supply need in order to ensure thecompany's stock balance."
+                    text "Bosch Rexroth is a leading supplier of large hydraulic drivesolutions. My work assignments included monitoring and analyzing the material supply need in order to ensure the company's stock balance."
                 ]
             ]
         ]
@@ -67,7 +67,7 @@ let workInfos = [
                     Css.fontStyleItalic
                 ]
                 Html.p [
-                    text "Syntronic AB, founded in 1983, develop technical solutions in areas such as telecom, defence, industry, medtech and automotive. The company operates in 8 different countries with 1276 employees. Here, I am currently working towards the world's leading telecom company, developing test system software/hardware for their aftermarket services. This implies maintenance as well as development of test system software/hardware for both older and newer (5G) telecom products."
+                    text "Syntronic AB, founded in 1983, develop technical solutions in areas such as telecom, defence, industry, medtech and automotive. The company operates in 8 different countries with 1276 employees. Here, I am currently working (remotely) towards the world's leading telecom company, developing test system software/hardware for their aftermarket test system services. This implies maintenance as well as development of test system software/hardware for both older and newer (5G) telecom products. The software development is done in C#, using developmental tools such as Git, Gitlab, Jenkins, and unit testing."
                 ]
             ]
         ]
@@ -104,66 +104,90 @@ let educationInfos = [
     } 
 ]
 
+type IconInfoType =
+    | Regular of string
+    | Link of Name:string * Link:string
+
 type IconInfo = {
     Icon : string
-    Info : string
+    Info : IconInfoType
 }
 
 let basicInfos = [
     {
         Icon = "fas fa-home fa-lg"
-        Info = "Haroe 268, Ramat Gan"
+        Info = 
+            "Haroe 268, Ramat Gan"
+            |> Regular
     }
     {
         Icon = "far fa-calendar-alt fa-lg"
-        Info = "1994-12-31"
+        Info = 
+            "1994-12-31"
+            |> Regular
     }
     {
         Icon = "fas fa-phone fa-lg"
-        Info = "+972559388237"
+        Info = 
+            "+972559388237"
+            |> Regular
+    }
+    {
+        Icon = "fab fa-linkedin fa-lg"
+        Info = 
+            ("LinkedIn", "https://www.linkedin.com/in/joshua-goldman-b31358160")
+            |> Link
+    }
+    {
+        Icon = "fab fa-facebook-square fa-lg"
+        Info =  
+            ("Facebook", "https://www.facebook.com/joshua1994")
+            |> Link
     }
     {
         Icon = "fas fa-envelope-open fa-lg"
-        Info = "joshuagoldman94
-        @gmail.com"
+        Info = 
+            "joshuagoldman94
+            @gmail.com"
+            |> Regular
     }
     {
         Icon = "fas fa-id-card-alt fa-lg"
-        Info = "ID:3-1924217-8"
+        Info = "ID:3-1924217-8" |> Regular
     }
     {
         Icon = "fas fa-car fa-lg"
-        Info = "Drivers license"
+        Info = "Drivers license" |> Regular
     }
 ]
 
 let proudOf = [
     {
         Icon = "fas fa-square-root-alt fa-2x"
-        Info = "Got highest grade in multivariable calculus"
+        Info = "Got highest grade in multivariable calculus" |> Regular
     }
     {
         Icon = "fas fa-music fa-2x"
-        Info = "A splended piano player"
+        Info = "A splended piano player" |> Regular
     }
 ]
 
 let strengths = [
     {
         Icon = "fas fa-hands-helping fa-2x"
-        Info = "Collaborative"
+        Info = "Collaborative" |> Regular
     }
     {
         Icon = "fas fa-dumbbell fa-2x"
-        Info = "Hard working"
+        Info = "Hard working" |> Regular
     }
     {
         Icon = "fas fa-cogs fa-2x"
-        Info = "Love for automation"
+        Info = "Love for automation" |> Regular
     }
     {
         Icon = "fas fa-binoculars fa-2x"
-        Info = "Can easly focus"
+        Info = "Can easly focus" |> Regular
     }
 ]
 
@@ -213,7 +237,7 @@ let otherSkills = [
         SkillName = "Python"
     }
     {
-        Percent = 50.0
+        Percent =60.0
         SkillName = "Jenkins"
     }
     {
@@ -318,7 +342,14 @@ let getBasicInfo info =
         Html.div [
             class' "column is-four-fifths"
             Html.p [
-                text info.Info
+                match info.Info with
+                | Regular infoTxt ->
+                    text infoTxt
+                | Link(infoTxt,link) ->
+                    Html.a [
+                        Attr.href link
+                        text infoTxt
+                    ]
             ]
         ]
     ]
@@ -329,6 +360,7 @@ let getStrengths info =
         Sutil.Attr.style [
             Css.color "black"
             Css.fontWeightBold
+            Css.paddingBottom 20
         ]
         Html.div [
             class' "columns is-centered"
@@ -341,7 +373,14 @@ let getStrengths info =
                 Html.div [
                     class' "columns"
                     Html.span [
-                        text info.Info
+                        match info.Info with
+                        | Regular infoTxt ->
+                            text infoTxt
+                        | Link(infoTxt,link) ->
+                            Html.a [
+                                Attr.href link
+                                text infoTxt
+                            ]
                     ]
                 ]
             ]

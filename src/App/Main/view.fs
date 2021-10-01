@@ -18,7 +18,7 @@ let styleSheet = [
     ]
     Sutil.Styling.rule ".glass" [
         Css.borderRadius 10
-        Css.padding 20
+        Css.padding 10
         Css.color color.black
         Css.fontWeightBold
         Css.boxShadow "0 0 1rem 0 rgba(0, 0, 0, 0.4)"
