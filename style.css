@@ -1,0 +1,170 @@
+
+ul {
+    list-style-type: square;
+}
+
+.software-dev {
+    font-weight: bold;
+    font-size: 15px;
+    font-style: italic;
+    text-align: left;
+    text-indent: 20px;
+}
+
+.grid-main {
+    display: grid;
+    grid-template-rows: min-content min-content;
+    color: black;
+    background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4% );
+    height: 1500px;
+  }
+
+.grid-main-upper {
+    grid-row: 1;
+    border-bottom: 2px;
+    border-color: black;
+    border-bottom-style: solid;
+}
+
+.grid-main-lower {
+    grid-row: 2;
+    
+}
+
+.grid-lower {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.grid-lower-left {
+    padding: 20px;
+    grid-column: 1;
+    border-right: 2px;
+    border-right-style: solid;
+}
+
+.grid-lower-right {
+    grid-column: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+.grid-upper {
+    padding: 30px;
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content;
+    grid-row-gap: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: large;
+}
+
+.profession {
+    font-weight: bold;
+    font-size: medium;
+}
+
+.subject-title {
+    font-weight: bold;
+    font-size: large;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.subject-name {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.date {
+    color: grey;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.grid-upper-img {
+    grid-row: 1;
+    text-align: center;
+    margin-right: 80px;
+}
+
+.grid-upper-name {
+    text-align: center;
+    margin-right: 80px;
+    grid-row: 2;
+}
+
+.grid-upper-profession {
+    text-align: center;
+    margin-right: 80px;
+    grid-row: 3;
+}
+
+.grid-upper-personalinfo {
+    grid-row: 4;
+    margin-left: 100px;
+}
+
+.grid-personalinfo {
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(290px, 1fr) );
+    grid-row-gap: 5px;
+}
+
+.grid-iconinfo {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-column-gap: 5px;
+}
+
+.grid-repeat-rows {
+    display: grid;
+    grid-template-columns: repeat(1fr)
+}
+
+.paragraph {
+    font-style: italic;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.bullet-list {
+    text-align: left;
+    padding-left: 30px;
+}
+
+.grid-piece {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: min-content min-content
+}
+
+.skill-title {
+    grid-column: 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.grid-skillwithchart {
+    display: grid;
+    grid-template-rows: min-content min-content;
+}
+
+.centerer {
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+}
+
+.centerer-center{
+    grid-column: 2;
+}
+
+.progress-border {
+    border-style: solid;
+    border-width: 1px;
+}
